@@ -1,0 +1,80 @@
+*{margin:0;padding:0;}
+.Mario{
+  background-image: url(paperm.gif);
+  height: 76px;
+  width: 44px;
+  background-repeat: no-repeat;
+
+ 
+}
+.run{
+  background-position-y: -31px;
+background-position-x: -18px;
+   
+   animation: mario-run 1s steps(1) infinite;
+   width: 51px;
+  position: absolute;
+  top: 59%;
+  left: 43%;
+  cursor: pointer;
+  transition: top 300ms ease;
+}
+.jump{
+  top: 20px;
+  transition: top 100ms ease;
+}
+.live{
+     background-position-y: -31px;
+  background-position-x: -112px;
+   animation: mario-walk 1s steps(2) infinite;
+}
+#window-mario{text-align: center;background-image: url(smw-bg-hills.png);background-repeat: no-repeat;background-size: 100% auto;width: 500px;height: 226px;position: relative;margin: 30vh auto 0 auto;}
+body{background-color: #0e0;}
+.floor{
+  position: absolute;
+top: 89%;
+  
+  background-image: url(floor.jpg);
+  height: 31px;
+  width: 100%;
+  left: 0;
+  background-size: auto 100%;
+  animation: floor-left 3s linear infinite;
+  background-position-x: 0;
+}
+
+
+.viewport {
+  width: 399px;   /* Viewport Width */
+  height: 12.46em;   /* Viewport Height (~ 199.42px) */
+  margin: 2em auto;   /* Little margin */
+  background: transparent url('sprite.png') 0 0 no-repeat;   /* Our sprite as viewport background */
+  animation: catwalk 500ms steps(12) infinite; /* The Animation */
+}
+@keyframes floor-left{
+    100% {
+background-position-x: -216px;}
+}
+}
+@keyframes jump-mario{
+  50%{
+    top:20px;
+  }
+}
+@keyframes mario-walk {
+  100% {
+  background-position-y: -31px;
+background-position-x: -22px;}
+}
+@keyframes mario-run {
+  25% {
+background-position-y: -108px;
+background-position-x: -28px;}
+  50% {
+ background-position-y: -31px;
+background-position-x: -18px;}
+  75%{
+    background-position-y: -108px;
+  background-position-x: -84px;
+  }
+}
