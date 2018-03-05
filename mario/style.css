@@ -9,15 +9,18 @@
 }
 .run{
   background-position-y: -31px;
-background-position-x: -18px;
+  background-position-x: -18px;
    
-   animation: mario-run 1s steps(1) infinite;
-   width: 51px;
+  animation-name: mario-run;
+  animation-duration: 1s;
+  animation-iteration-count:1;
+  animation-timing-function: steps(1);
+  transition: all 300ms ease);
+  width: 51px;
   position: absolute;
   top: 59%;
   left: 43%;
   cursor: pointer;
-  transition: top 300ms ease;
 }
 .jump{
   top: 20px;

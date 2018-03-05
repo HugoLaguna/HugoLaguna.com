@@ -63,6 +63,7 @@ body{
      padding: 40vh 0 0 5%;
   
 }
+#central .run{top: unset;bottom: 48px;left: 2%;}
 .page .content h1{
     
     font-size: 3.5em;
