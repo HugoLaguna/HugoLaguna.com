@@ -1,0 +1,63 @@
+
+ <!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+ 
+ <head>
+     <title>  Mario Frame </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="style.css" rel="stylesheet" type="text/css" />
+     <script>
+
+        document.onkeydown = function(e){
+            e = e || window.event;
+            var key = e.which || e.keyCode;
+            if(key===87){
+                activer();
+            }
+        }
+        addEventListener("keydown", function(event) {
+    if (event.keyCode == 87 && event.ctrlKey)
+    activer();
+  });
+         var active=false;
+        function activer(){
+            if (active){
+                active=false;
+                console.log('desactivo');
+                document.getElementById('mario').className='Mario run';
+            }else{
+                active=true;
+                console.log('Activo');
+                document.getElementById('mario').className='Mario run jump';
+                setTimeout('activer()',200);
+            }
+        }
+        function desactiver(){
+            active=false;
+            console.log('desactivo');
+            document.getElementById('mario').className='Mario run';
+        }
+     function movingM(e) {
+       if (active){ 
+        var x = e.clientX - 20;
+        var y = e.clientY - 20;
+        document.getElementById('mario').style.left=x+'px';
+        document.getElementById('mario').style.top=y+'px';
+        cadena= 'moviendo' + x + " / " + y;
+        console.log( cadena);
+       }
+       
+}
+
+     </script>
+ </head>
+ 
+ <body id="home-page" >
+     <div id='window-mario'>
+
+            <div class="Mario live"></div>     
+            <div id="mario" class="Mario run"  onmousedown="activer()" onmouseup="desactiver()"></div>
+            <div id="floor" class="floor"></div>
+     </div>
+     
+ </body>
